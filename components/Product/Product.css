@@ -1,0 +1,121 @@
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 60px;
+    width: 70%;
+    max-width: 1200px;
+    margin-left:300px;
+
+}
+
+.products-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 15px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: var(--spacing-large);
+}
+
+.products-element__name {
+    margin-bottom: auto;
+    font-weight: bold;
+}
+
+.products-element__img {
+    width: 100%;
+    height: 270px;
+    margin-top: var(--spacing-medium);
+    object-fit: contain;
+}
+
+.products-element__price {
+    margin-top: var(--spacing-medium);
+    color: var(--color-unaccent);
+}
+
+.products-element__btn {
+    margin-top: var(--spacing-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: 1px solid var(--color-unaccent);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.products-element__btn_active {
+    border: 1px solid transparent;
+    background-image: var(--linear-gradient);
+}
+
+
+@media screen and (max-width: 1700px) {
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 0.1fr));
+        grid-gap: 30px;
+        width: 70%;
+        max-width: 1200px;
+        
+    }
+
+
+}
+
+
+@media screen and (max-width: 1350px) {
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 0.1fr));
+        grid-gap: 20px;
+        width: 70%;
+        max-width: 1200px;
+        margin-left: 250px;
+    }
+
+
+}
+
+@media screen and (max-width: 1220px) {
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 0.1fr));
+        grid-gap: 20px;
+        width: 70%;
+        max-width: 1200px;
+        margin-left: 200px;
+    }
+}
+@media screen and (max-width: 1200px) {
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 0.1fr));
+        grid-gap: 40px;
+        width: 70%;
+        max-width: 700px;
+        margin-left: 250px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 0.1fr));
+        grid-gap: 30px;
+        width: 70%;
+        max-width: 700px;
+        margin-left: 180px;
+    }
+    
+}
+

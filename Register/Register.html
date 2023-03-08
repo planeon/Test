@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits Shop</title>
+    <link rel="stylesheet" href="Register.css">
+  
+</head>
+<body>
+
+    <div class="MainMenu">
+        <ul>
+            <li><a href="#"><div class="Circle"></div></a></li>
+            <li><a href="C:\Users\zenak\OneDrive\Desktop\Новая папка\index.html">Головна</a></li>
+            <li><a href="#">Сортировка Мен.</a></li>
+            <li><a href="#">Сортировка бол.</a></li>
+            <li><a href="#">Топ</a></li>
+            <li><a href="C:\Users\zenak\OneDrive\Desktop\Новая папка\Register\Register.html">Вхід/Реєстрація</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+
+
+
+
+
+    <main>
+
+        <div class="Register">
+            <h1>Реєстрація</h1>
+            <input type="text" id="email" placeholder="Email" name="Email"><br>
+            <input type="Text" id="login" placeholder="Login" name="Login"><br>
+            <input type="password" id="password" placeholder="min 6 character password" name="Password"><br>
+            <button type="submit" id="Register">Реєстрація</button>
+
+
+            <div class="container_signin">
+                <p>Є Аккаунт ?<a href="C:\Users\zenak\OneDrive\Desktop\Новая папка\Login\Login.html">Увійти</a>.</p>
+            </div>
+
+
+            <div class="Vector">
+
+                <a href="#" id="facebook"><img src="E:\AutoSelect\Photo\VectorFacebook.png"></a>
+                <a href="#" id="google"><img src="E:\AutoSelect\Photo\akar-icons_google-contained-fillGogl.png"></a>
+
+            </div>
+        </div>
+
+    </main>
+
+
+    </div>
+
+
+
+    <div class="footer">
+        <p>Telegram</p>
+
+        <p><a href=”tel:+38067804792”>+38067804792</a></p>
+
+        <p>Facebook</p>
+    </div>
+
+
+    <script type="module">
+      
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getDatabase,set,ref } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+     
+        const firebaseConfig = {
+            apiKey: "AIzaSyBKV4mhDjzZ9PWE0bWO-rWKXO9L57ZtMRc",
+            authDomain: "fruits-64a34.firebaseapp.com",
+            databaseURL: "https://fruits-64a34-default-rtdb.firebaseio.com",
+            projectId: "fruits-64a34",
+            storageBucket: "fruits-64a34.appspot.com",
+            messagingSenderId: "989879805111",
+            appId: "1:989879805111:web:a9bdc6827e478a45139932",
+            measurementId: "G-HJR56P6EP0"
+        };
+
+      
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+
+
+        Register.addEventListener('click', (e) => {
+            var email = document.getElementById('email').value;
+            var login = document.getElementById('login').value;
+            var password = document.getElementById('password').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    set(ref(database, 'users/' + user.uid), {
+
+                        login: login,
+                        email: email 
+                        })
+                    // ...
+                    alert('Користувач  Зареєстрован');
+                    window.location.replace("file:///C:/Users/zenak/OneDrive/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0/Cabinet/Cabinet.html");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+
+                    alert(errorMessage);
+                });
+
+        })
+
+
+    </script>
+  
+    <script src="Register.js" ></script>
+</body>
+</html>

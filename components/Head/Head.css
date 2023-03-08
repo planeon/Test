@@ -1,0 +1,9 @@
+
+
+.header-counter {
+    margin-left: auto;
+    padding-right: var(--spacing-small);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top:-40px;
+}
